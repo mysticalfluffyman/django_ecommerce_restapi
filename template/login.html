@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load crispy_forms_tags %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sensive Blog - Home</title>
+	<link rel="icon" href="img/Fevicon.png" type="image/png">
+
+  <link rel="stylesheet" href={% static "vendors/bootstrap/bootstrap.min.css" %}>
+  <link rel="stylesheet" href={% static "vendors/fontawesome/css/all.min.css" %}>
+  <link rel="stylesheet" href={% static "vendors/themify-icons/themify-icons.css" %}>
+  <link rel="stylesheet" href={% static "vendors/linericon/style.css" %}>
+  <link rel="stylesheet" href={% static "vendors/owl-carousel/owl.theme.default.min.css" %}>
+  <link rel="stylesheet" href={% static "vendors/owl-carousel/owl.carousel.min.css" %}>
+
+  <link rel="stylesheet" href={ % static "css/style.css" %}>
+</head>
+
+<body>
+  <!--================Header Menu Area =================-->
+  
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        
+        
+        <div class="container box_1620">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <a class="navbar-brand logo_h" href="index.html"><img src="media/images.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-center">
+              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+              <li class="nav-item"><a class="nav-link" href="archive.html">Archive</a></li> 
+              <li class="nav-item"><a class="nav-link" href="category.html">Category</a>
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right navbar-social">
+              <li><a href="#"><i class="ti-facebook"></i></a></li>
+              <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+              <li><a href="#"><i class="ti-instagram"></i></a></li>
+              <li><a href="#"><i class="ti-skype"></i></a></li>
+            </ul>
+          </div> 
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!--================Header Menu Area =================-->
+  
+      <form method="post">
+        {% csrf_token %} 
+        {{ form|crispy  }}
+        <button type="submit">Login</button>
+      </form>
+      <p><strong>-- OR --</strong></p>
+  
+          <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+          <p style="margin-left: 2.5em;padding: 0 7em 2em 0;border-width: 2px; border-color: white; border-style:solid;"></p>
+  
+  </p>
+  
+  
+ 
+  <!--================ Start Footer Area =================-->
+  <footer class="footer-area section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>About Project</h6>
+            <p>
+             LOGIN will lead to Swagger docs for api OR for registering use <a href="{% url 'swagger' %}">Swagger</a>
+            </p>
+          </div>
+        </div>
+       
+        
+      </div>
+     
+    </div>
+  </footer>
+  <!--================ End Footer Area =================-->
+
+  <script src={% static "vendors/jquery/jquery-3.2.1.min.js" %}></script>
+  <script src={% static "vendors/bootstrap/bootstrap.bundle.min.js" %}></script>
+  <script src={% static "vendors/owl-carousel/owl.carousel.min.js" %}></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
